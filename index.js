@@ -1,7 +1,15 @@
 #!/usr/bin/env node
 
+const fs = require("fs");
+const path = require("path");
+
 (function() {
-	readFromStdIn();
+	let filePath = process.argv[2];
+	if (filePath) {
+		readFromFile(filePath);
+	} else {
+		readFromStdIn();
+	}
 
 	function addEnclosingQuotes(jsonString) {
 		return `'${jsonString}'`;
@@ -25,6 +33,14 @@
 		output = escapeSingleQuotes(output);
 		output = addEnclosingQuotes(output);
 		return output;
+	}
+
+	async function readFromFile(relativePath) {
+		let fullPath = path.resolve(__dirname, relativePath);
+		await fs.readFile(fullPath, (err, data) => {
+			let output = processJson(data);
+			print(output);
+		});
 	}
 
 	function readFromStdIn() {
