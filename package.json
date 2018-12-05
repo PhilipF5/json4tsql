@@ -1,6 +1,6 @@
 {
 	"name": "json4tsql",
-	"version": "0.0.0",
+	"version": "0.1.0",
 	"description": "Minify JSON for use in T-SQL and SQL Server",
 	"main": "index.js",
 	"repository": "github:PhilipF5/json4tsql",
