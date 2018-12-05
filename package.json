@@ -3,7 +3,7 @@
 	"version": "0.1.0",
 	"description": "Minify JSON for use in T-SQL and SQL Server",
 	"main": "index.js",
-	"repository": "https://github.com/github:PhilipF5/json4tsql",
+	"repository": "github:PhilipF5/json4tsql",
 	"author": "Philip Fulgham (https://www.philipfulgham.com)",
 	"license": "MIT",
 	"bin": {
